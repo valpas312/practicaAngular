@@ -8,11 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RutaComponent implements OnInit {
 
+  name: string = 'Sin params';
+  surname: string = 'Sin params';
+
   constructor(private rutaActiva: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.rutaActiva.queryParams.subscribe(data => {
-      console.log(data);
+      this.name = data['name'];
     } );
+
+    this.rutaActiva.params.subscribe(data => {
+      this.surname = data['surname'];
+    });
   }
 }
