@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RutaComponent } from './components/ruta/ruta.component';
+import { ChildrenHomeComponent } from './components/home/children-home/children-home.component';
+import { ChildrenHomeDosComponent } from './components/home/children-home-dos/children-home-dos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RutaComponent } from './components/ruta/ruta.component';
     HomeComponent,
     UsuariosComponent,
     ErrorComponent,
-    RutaComponent
+    RutaComponent,
+    ChildrenHomeComponent,
+    ChildrenHomeDosComponent
   ],
   imports: [
     BrowserModule,
