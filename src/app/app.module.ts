@@ -13,6 +13,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { RutaComponent } from './components/ruta/ruta.component';
 import { ChildrenHomeComponent } from './components/home/children-home/children-home.component';
 import { ChildrenHomeDosComponent } from './components/home/children-home-dos/children-home-dos.component';
+import { RolComponent } from './components/rol/rol.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { ChildrenHomeDosComponent } from './components/home/children-home-dos/ch
     ErrorComponent,
     RutaComponent,
     ChildrenHomeComponent,
-    ChildrenHomeDosComponent
+    ChildrenHomeDosComponent,
+    RolComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

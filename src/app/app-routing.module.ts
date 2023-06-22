@@ -6,6 +6,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { RutaComponent } from './components/ruta/ruta.component';
 import { ChildrenHomeComponent } from './components/home/children-home/children-home.component';
 import { ChildrenHomeDosComponent } from './components/home/children-home-dos/children-home-dos.component';
+import { RolComponent } from './components/rol/rol.component';
 
 const routes: Routes = [
   {path: 'home', children: [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'ruta', component: RutaComponent},
   {path: 'ruta/:surname', component: RutaComponent},
+  {path: 'rol', component: RolComponent},
   {path: '**', component: ErrorComponent}
 ];
 
