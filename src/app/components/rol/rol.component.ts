@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatCardLgImage } from '@angular/material/card';
 import { RolServicesService } from 'src/app/services/rol-services.service';
 
 @Component({
@@ -8,7 +10,14 @@ import { RolServicesService } from 'src/app/services/rol-services.service';
   providers: [RolServicesService]
 })
 export class RolComponent implements OnInit {
-  constructor(private rolServicesService: RolServicesService) { }
+
+  form: FormGroup;
+
+  constructor(private rolServicesService: RolServicesService, private _fb: FormBuilder) {
+    this.form = this._fb.group({
+      name: ''
+    });
+  }
 
   ngOnInit(): void {
     this.getRoles();
@@ -32,4 +41,38 @@ export class RolComponent implements OnInit {
     }
     );
   }
+
+  onFormSubmit() {
+    if(this.form.valid){
+      this.rolServicesService.addRol(this.form.value.name).subscribe({
+        next: (data) => {
+          console.log(data);
+          this.getRoles();
+        },
+        error: (error) => {
+          console.log(error);
+        },
+        complete: () => {
+          console.log('Complete');
+        }
+      }
+      );
+    }
+  }
+
+  deleteRol(id: any) {
+    this.rolServicesService.deleteRol(id).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.getRoles();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      complete: () => {
+        console.log('Complete');
+      }
+    }
+    );
+  };
 }

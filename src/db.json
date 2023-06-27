@@ -1,21 +1,21 @@
 {
-    "users":[
-        {
-            "id":1,
-            "name":"John",
-            "email":"sdasd@gmail.com",
-            "password":"asdasd",
-            "age": 25
-        }
-    ],
-    "rol":[
-        {
-            "id":1,
-            "name":"admin"
-        },
-        {
-            "id":2,
-            "name":"user"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "sdasd@gmail.com",
+      "password": "asdasd",
+      "age": 25
+    }
+  ],
+  "rol": [
+    {
+      "id": 1,
+      "name": "admin"
+    },
+    {
+      "name": "alumno",
+      "id": 2
+    }
+  ]
 }
